@@ -21,6 +21,7 @@ The updated performances on the four re-ID datasets are listed below:
 - Python 3.6
 - PyTorch (version >= 0.4.1)
 - h5py, scikit-learn, metric-learn, tqdm
+- scipy 1.3.1
 
 ### Download datasets 
 - DukeMTMC-VideoReID: This [page](https://github.com/Yu-Wu/DukeMTMC-VideoReID) contains more details and baseline code.

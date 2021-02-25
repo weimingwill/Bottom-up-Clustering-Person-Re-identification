@@ -258,9 +258,9 @@ class Bottom_up():
         
         dists = self.calculate_distance(u_feas)
         
-        idx1, idx2 = self.select_merge_data(u_feas, labels, label_to_images, size_penalty,dists)
+        idx1, idx2 = self.select_merge_data(u_feas, labels, label_to_images, size_penalty, dists)
         
-        new_train_data, labels = self.generate_new_train_data(idx1, idx2, labels,nums_to_merge)
+        new_train_data, labels = self.generate_new_train_data(idx1, idx2, labels, nums_to_merge)
         
         num_train_ids = len(np.unique(np.array(labels)))
 

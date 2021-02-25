@@ -23,11 +23,14 @@ def main(args):
     num_train_ids = len(np.unique(np.array(cluster_id_labels)))
     nums_to_merge = int(num_train_ids * args.merge_percent)
 
-    BuMain = Bottom_up(model_name=args.arch, batch_size=args.batch_size, 
-            num_classes=num_train_ids,
-            dataset=dataset_all,
-            u_data=new_train_data, save_path=args.logs_dir, max_frames=args.max_frames,
-            embeding_fea_size=args.fea)
+    BuMain = Bottom_up(model_name=args.arch,
+                       batch_size=args.batch_size,
+                       num_classes=num_train_ids,
+                       dataset=dataset_all,
+                       u_data=new_train_data,
+                       save_path=args.logs_dir,
+                       max_frames=args.max_frames,
+                       embeding_fea_size=args.fea)
 
 
     for step in range(int(1/args.merge_percent)-1):
@@ -53,9 +56,9 @@ if __name__ == '__main__':
     parser.add_argument('-a', '--arch', type=str, default='avg_pool',choices=models.names())
     working_dir = os.path.dirname(os.path.abspath(__file__))
     parser.add_argument('--data_dir', type=str, metavar='PATH',
-                        default=os.path.join(working_dir,'data'))
+                        default=os.path.join(working_dir, 'data'))
     parser.add_argument('--logs_dir', type=str, metavar='PATH',
-                        default=os.path.join(working_dir,'logs'))
+                        default=os.path.join(working_dir, 'logs'))
     parser.add_argument('--max_frames', type=int, default=900)
     parser.add_argument('--loss', type=str, default='ExLoss')
     parser.add_argument('-m', '--momentum', type=float, default=0.5)

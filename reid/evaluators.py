@@ -98,6 +98,7 @@ class Evaluator(object):
     def __init__(self, model, is_print=False):
         super(Evaluator, self).__init__()
         self.model = model
+
     def evaluate(self, data_loader, query, gallery, metric=None):
         features, _, _ = extract_features(self.model, data_loader)
         distmat = pairwise_distance(features, query, gallery, metric=metric)
